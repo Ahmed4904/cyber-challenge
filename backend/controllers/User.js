@@ -54,7 +54,6 @@ export const createUser =  async(req,res)=>{
         await User.create({
             username:username,
             email:email,
-            telephone:telephone,
             password:hashPassword,
             role:role
         })
@@ -82,8 +81,7 @@ export const updateUser = async(req,res)=>{
     try {
         await User.update({
             id:id,
-            nom:nom,
-            prenom:prenom,
+            username:username,
             email:email,
             telephone:telephone,
             password:hashPassword,

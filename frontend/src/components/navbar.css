@@ -1,0 +1,29 @@
+/* Navbar.css */
+
+.greenclimate-text {
+  font-weight: bold;
+  color: #FFF; /* Changer la couleur du logo */
+}
+
+.navlink-text {
+  margin-left: 10px;
+}
+
+.navbar-burger {
+  margin-top: 10px;
+}
+
+/* Effet de survol sur les éléments du menu */
+.navbar-item:hover {
+  background-color: #f5f5f5;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon.is-medium {
+  margin-right: 5px;
+}
