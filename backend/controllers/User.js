@@ -1,4 +1,4 @@
-/*import User from "../models/UserModel.js"
+import User from "../models/UserModel.js"
 import argon2 from "argon2"
 
 export const getUsers = async(req,res)=>{
@@ -116,4 +116,4 @@ export const deleteUser = async(req,res)=>{
     } catch (error) {
         res.status(400).json({msg:error.message})
     }
-}*/
+}

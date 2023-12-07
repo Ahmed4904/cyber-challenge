@@ -1,11 +1,11 @@
-/*import User from "../models/UserModel.js"
+import User from "../models/UserModel.js"
 
 export const verifyUser = async(req,res,next)=>{
     if(!req.session.userId){
         return res.status(401).json({msg:"S'il vous plait connectez-vous à votre compte"})
     }
     const user = await User.findOne({
-        attributes:['id','uuid','nom','prenom','email','telephone','role'],
+        attributes:['id','uuid','username','email','role'],
         where: {
             uuid: req.session.userId
         }
@@ -19,7 +19,7 @@ export const verifyUser = async(req,res,next)=>{
 
 export const adminOnly = async(req,res,next)=>{
     const user = await User.findOne({
-        attributes:['id','uuid','nom','prenom','email','telephone','role'],
+        attributes:['id','uuid','usernale','email','role'],
         where: {
             uuid: req.session.userId
         }
@@ -27,4 +27,4 @@ export const adminOnly = async(req,res,next)=>{
     if(!user) return res.status(404).json({msg:"Utilisateur non trouvé"})
     if(user.role !== "admin") return res.json({msg:"Accès interdit"})
     next()
-}*/
+}

@@ -1,4 +1,4 @@
-/*import User from "../models/UserModel.js"
+import User from "../models/UserModel.js"
 import argon2 from "argon2"
 
 export const Login = async(req,res)=>{
@@ -15,11 +15,9 @@ export const Login = async(req,res)=>{
     const id = user.id
     const uuid = user.uuid
     const nom = user.nom
-    const prenom = user.prenom
     const email = user.email
-    const telephone = user.telephone
     const role = user.role
-    res.status(200).json({id,uuid,nom,prenom,email,telephone,role})
+    res.status(200).json({id,uuid,username,email,role})
 }
 
 export const Me = async(req,res)=>{
@@ -27,7 +25,7 @@ export const Me = async(req,res)=>{
         return res.status(401).json({msg:"S'il vous plait connectez-vous à votre compte"})
     }
     const user = await User.findOne({
-        attributes:['id','uuid','nom','prenom','email','telephone','role'],
+        attributes:['id','uuid','username','email','role'],
         where: {
             uuid: req.session.userId
         }
@@ -41,4 +39,4 @@ export const logOut = (req,res)=>{
         if(err) return res.status(400).json("Impossible de se déconnecter")
         res.status(200).json({msg:"Vous etes déconnecté"})
     })
-}*/
+}

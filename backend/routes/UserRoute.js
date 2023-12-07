@@ -1,9 +1,11 @@
-/*import express from "express"
+import express from "express"
 import {
     createUser,
     deleteUser,
-    updateUser
-} from "../controllers/Users.js"
+    updateUser,
+    getUsers,
+    getUserById
+} from "../controllers/User.js"
 import { verifyUser, adminOnly } from "../middleware/AuthUser.js"
 
 const router = express.Router()
@@ -15,4 +17,4 @@ router.post('/users', verifyUser, adminOnly, createUser)
 router.patch('/users/:id', verifyUser, adminOnly, updateUser)
 router.delete('/users/:id', verifyUser, adminOnly, deleteUser)
 
-export default router*/
+export default router

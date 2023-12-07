@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"
-import db from '../config/Database.js'
-import Quiz from './QuizModel.js'
+import db from "../config/Database.js"
+import Quiz from "./QuizModel.js"
 
 const {DataTypes} = Sequelize
 
