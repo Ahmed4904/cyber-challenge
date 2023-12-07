@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize"
-import db from '../config/Database.js';
+import db from '../config/Database.js'
 
 const {DataTypes} = Sequelize
 
@@ -20,4 +20,4 @@ const Quiz = db.define('quiz', {
   freezeTableName: true,
 });
 
-export default Quiz;
+export default Quiz

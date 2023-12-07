@@ -1,8 +1,5 @@
-import express from "express"
+/*import express from "express"
 import {
-    getUsers,
-    getUserById,
-    /*getUserByEmail,*/
     createUser,
     deleteUser,
     updateUser
@@ -18,4 +15,4 @@ router.post('/users', verifyUser, adminOnly, createUser)
 router.patch('/users/:id', verifyUser, adminOnly, updateUser)
 router.delete('/users/:id', verifyUser, adminOnly, deleteUser)
 
-export default router
+export default router*/

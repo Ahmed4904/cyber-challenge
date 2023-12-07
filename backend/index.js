@@ -3,7 +3,7 @@ import db from "./config/Database.js"
 import cors from "cors"
 import session from "express-session"
 import dotenv from "dotenv"
-import SequelizeStore from "connect-session-sequelize"
+//import SequelizeStore from "connect-session-sequelize"
 
 dotenv.config()
 
@@ -13,11 +13,11 @@ const app=express();
     await db.sync()
 })()
 
-const sessionStore = SequelizeStore(session.Store)
+//const sessionStore = SequelizeStore(session.Store)
 
-const store = new sessionStore({
+/*const store = new sessionStore({
     db:db
-});
+});*/
 
 app.use(cors({
     credentials: true,
@@ -27,15 +27,14 @@ app.use(session({
     secret: process.env.SESS_SECRET,
     resave: false,
     saveUninitialized: true,
-    store:store,
     cookie: {
         secure:'auto',
     }
 }))
 app.use(express.json())
 
-store.sync();
+//store.sync();
 
 app.listen(process.env.APP_PORT,()=>{
-    console.log('Server running at port 8081...');
+    console.log('Server running at port',process.env.APP_PORT,'......');
 });

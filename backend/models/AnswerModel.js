@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"
 import db from '../config/Database.js';
-import Question from '../models/QuestionModel.js';
+import Question from './QuestionModel.js';
 
 const {DataTypes} = Sequelize
 
@@ -28,7 +28,7 @@ const Answer = db.define('answer', {
   freezeTableName: true,
 });
 
-Question.hasMany(Answer);
-Answer.belongsTo(Question, { foreignKey: 'questionId' })
+Question.hasMany(Answer)
+Answer.belongsTo(Question,{ foreignKey:'questionId'})
 
 export default Answer

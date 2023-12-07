@@ -1,8 +1,9 @@
 import { Sequelize } from "sequelize"
 import db from '../config/Database.js'
-import User from '../models/UserModel.js'
-import Quiz from '../models/QuizModel.js'
-import Question from '../models/QuestionModel.js'
+
+import User from './UserModel.js'
+import Quiz from './QuizModel.js'
+import Question from './QuestionModel.js'
 
 const {DataTypes} = Sequelize
 
@@ -22,14 +23,23 @@ const UserResponse = db.define('userresponse', {
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    validate:{
+        notEmpty: true,
+    },
   },
   quizId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    validate:{
+        notEmpty: true,
+    },
   },
   questionId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    validate:{
+        notEmpty: true,
+    },
   },
   
 }, {

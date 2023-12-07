@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"
-import db from '../config/Database.js';
-import Quiz from '../models/QuizModel.js';
+import db from '../config/Database.js'
+import Quiz from './QuizModel.js'
 
 const {DataTypes} = Sequelize
 
@@ -20,12 +20,15 @@ const Question = db.define('question', {
   quizId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    validate:{
+        notEmpty: true,
+    },
   },
 }, {
   freezeTableName: true,
 });
 
 Quiz.hasMany(Question);
-Question.belongsTo(Quiz, { foreignKey: 'quizId' });
+Question.belongsTo(Quiz,{foreignKey: 'quizId' });
 
-export default Question;
+export default Question
